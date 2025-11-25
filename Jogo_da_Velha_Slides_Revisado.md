@@ -1,6 +1,7 @@
 ---
 marp: true
-theme: default
+theme: requisitos
+class: requisitos, lead
 paginate: true
 footer: 'Engenharia de Requisitos • Jogo da Velha'
 ---
