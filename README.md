@@ -1,7 +1,9 @@
 ---
 marp: true
-theme: default
+theme: requisitos
+class: requisitos, lead
 paginate: true
+footer: 'Engenharia de Requisitos • Jogo da Velha'
 ---
 # 🎮 Engenharia de Requisitos
 
@@ -24,7 +26,7 @@ paginate: true
 
 # 🤓 A reação natural do desenvolvedor
 
-A maioria dos alunos:
+A maioria dos alunos: (É moleza!)
 
 - Abre o VS Code
 - Cria uma matriz 3×3
@@ -32,6 +34,7 @@ A maioria dos alunos:
 - Faz verificação de vitória
 - Monta uma interface básica
 - Usa o **próprio entendimento** do jogo
+- OU Gera o código usando a IA!
 
 ---
 

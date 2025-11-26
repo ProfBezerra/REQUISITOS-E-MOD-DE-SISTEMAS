@@ -11,24 +11,13 @@ footer: 'Engenharia de Requisitos • Jogo da Velha'
 
 ---
 
-## 🎞 Exemplo de Animações
-
-<div class="anim-type" style="max-width:62%">Requisitos claros reduzem retrabalho.</div>
-
-<ul class="stagger" style="margin-top:18px">
-  <li><strong>RF</strong> definem comportamentos.</li>
-  <li><strong>RNF</strong> definem qualidades.</li>
-  <li><strong>RN</strong> impõem regras de domínio.</li>
-  <li class="anim-pulse" style="display:inline-block;padding:4px 10px;border-radius:6px;background:#1e2736">Evite ambiguidade</li>
-</ul>
-
-> As animações aparecem na versão HTML. Em PDF (estático) não são visíveis.
-
----
 
 # 🧭 Objetivo da Atividade
 
-Mostrar que iniciar pela codificação sem requisitos gera suposições, retrabalho e risco de rejeição.
+* Mostrar que iniciar pela codificação sem requisitos gera suposições, retrabalho e risco de rejeição.
+* Compreender o que é requisitos
+* A importancia da Elicitação de Requisitos
+* Q
 
 ---
 
