@@ -11,6 +11,21 @@ footer: 'Engenharia de Requisitos • Jogo da Velha'
 
 ---
 
+## 🎞 Exemplo de Animações
+
+<div class="anim-type" style="max-width:62%">Requisitos claros reduzem retrabalho.</div>
+
+<ul class="stagger" style="margin-top:18px">
+  <li><strong>RF</strong> definem comportamentos.</li>
+  <li><strong>RNF</strong> definem qualidades.</li>
+  <li><strong>RN</strong> impõem regras de domínio.</li>
+  <li class="anim-pulse" style="display:inline-block;padding:4px 10px;border-radius:6px;background:#1e2736">Evite ambiguidade</li>
+</ul>
+
+> As animações aparecem na versão HTML. Em PDF (estático) não são visíveis.
+
+---
+
 # 🧭 Objetivo da Atividade
 
 Mostrar que iniciar pela codificação sem requisitos gera suposições, retrabalho e risco de rejeição.
@@ -20,6 +35,8 @@ Mostrar que iniciar pela codificação sem requisitos gera suposições, retraba
 # 🔥 Provocação Inicial
 
 "Desenvolva um Jogo da Velha." (sem contexto)
+
+<img src="imagens/jogo_da_velha_de_tabuleiro_classico_e_tradicional.webp" alt="Logo" width="350" >
 
 - Sem regras escritas
 - Sem requisitos definidos
@@ -33,6 +50,8 @@ Mostrar que iniciar pela codificação sem requisitos gera suposições, retraba
 ### Como você sabe se o cliente vai aceitar a sua solução?
 
 Sem requisitos: não há acordo, escopo, nem teste objetivo.
+
+<img src="imagens/image.png" alt="Logo" width="650" height="440">
 
 ---
 

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha - UNIFOR</title>
+    <style>
+        /* --- PALETA DE CORES UNIFOR --- */
+        :root {
+            --unifor-blue: #003366; 
+            --unifor-orange: #F58025;
+            --bg-gradient-start: #004a94;
+            --bg-gradient-end: #002040;
+            --text-light: #ffffff;
+        }
+
+        /* ESTILOS GERAIS */
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            color: var(--text-light);
+            padding: 20px; /* Adicionado padding para telas menores */
+            box-sizing: border-box;
+        }
+
+        /* --- NOVO: Estilo do Logo --- */
+        .unifor-logo {
+            /* Define um tamanho máximo para não ficar gigante */
+            max-width: 220px;
+            height: auto;
+            margin-bottom: 10px;
+            /* TRUQUE DE CSS: 
+               Isso inverte as cores da imagem. Como o logo original é azul escuro,
+               ele ficará branco para contrastar perfeitamente com o fundo.
+            */
+            filter: brightness(0) invert(1);
+            /* Sombra suave para destacar o logo branco */
+            filter: brightness(0) invert(1) drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
+        }
+
+        h2 {
+            /* Subtítulo "Jogo da Velha" */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0 0 25px 0;
+            font-size: 1.2rem;
+            color: var(--unifor-orange);
+            font-weight: 600;
+        }
+
+        .status {
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 10px 25px;
+            border-radius: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* ESTILOS DO TABULEIRO */
+        .board {
+            display: grid;
+            /* Usando 'fr' para ser responsivo */
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 5px;
+            background-color: var(--unifor-orange); 
+            border: 5px solid var(--unifor-orange);
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            overflow: hidden;
+            /* Tamanho fixo para o tabuleiro */
+            width: 320px;
+            height: 320px;
+        }
+
+        .cell {
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem; /* Ícones maiores */
+            font-weight: 900;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.2s ease;
+        }
+
+        .cell:hover {
+            background-color: #f0f4f8;
+        }
+        
+        .cell.x { color: var(--unifor-orange); }
+        .cell.o { color: var(--unifor-blue); }
+
+        /* ESTILOS DO BOTÃO */
+        .restart-btn {
+            margin-top: 35px;
+            padding: 12px 35px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background-color: var(--unifor-orange);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(245, 128, 37, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .restart-btn:hover {
+            background-color: #e06d1b;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(245, 128, 37, 0.6);
+        }
+        
+        .restart-btn:active {
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+<body>
+
+    <img src="https://unifor.br/o/unifor-theme/images/unifor-logo-horizontal-negative.svg" alt="Logo UNIFOR" class="unifor-logo">
+    
+    <h2>Jogo da Velha</h2>
+
+    <div class="status" id="status">Vez do jogador: X</div>
+
+    <div class="board" id="board">
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+    </div>
+
+    <button class="restart-btn" id="restartBtn">Reiniciar Partida</button>
+
+    <script>
+        // (A LÓGICA JAVASCRIPT PERMANECE A MESMA)
+        const statusDisplay = document.getElementById('status');
+        const restartBtn = document.getElementById('restartBtn');
+        const cells = document.querySelectorAll('.cell');
+
+        let gameActive = true;
+        let currentPlayer = "X";
+        let gameState = ["", "", "", "", "", "", "", "", ""];
+
+        const winningConditions = [
+            [0, 1, 2], [3, 4, 5], [6, 7, 8],
+            [0, 3, 6], [1, 4, 7], [2, 5, 8],
+            [0, 4, 8], [2, 4, 6]
+        ];
+
+        function handleCellPlayed(clickedCell, clickedCellIndex) {
+            gameState[clickedCellIndex] = currentPlayer;
+            clickedCell.innerHTML = currentPlayer;
+            clickedCell.classList.add(currentPlayer.toLowerCase());
+        }
+
+        function handlePlayerChange() {
+            currentPlayer = currentPlayer === "X" ? "O" : "X";
+            statusDisplay.innerHTML = `Vez do jogador: ${currentPlayer}`;
+        }
+
+        function handleResultValidation() {
+            let roundWon = false;
+            for (let i = 0; i <= 7; i++) {
+                const winCondition = winningConditions[i];
+                let a = gameState[winCondition[0]];
+                let b = gameState[winCondition[1]];
+                let c = gameState[winCondition[2]];
+                if (a === '' || b === '' || c === '') {
+                    continue;
+                }
+                if (a === b && b === c) {
+                    roundWon = true;
+                    break;
+                }
+            }
+
+            if (roundWon) {
+                statusDisplay.innerHTML = `🎉 Jogador ${currentPlayer} venceu!`;
+                gameActive = false;
+                return;
+            }
+
+            let roundDraw = !gameState.includes("");
+            if (roundDraw) {
+                statusDisplay.innerHTML = `Empate!`;
+                gameActive = false;
+                return;
+            }
+
+            handlePlayerChange();
+        }
+
+        function handleCellClick(clickedCellEvent) {
+            const clickedCell = clickedCellEvent.target;
+            const clickedCellIndex = parseInt(clickedCell.getAttribute('data-index'));
+
+            if (gameState[clickedCellIndex] !== "" || !gameActive) {
+                return;
+            }
+
+            handleCellPlayed(clickedCell, clickedCellIndex);
+            handleResultValidation();
+        }
+
+        function handleRestartGame() {
+            gameActive = true;
+            currentPlayer = "X";
+            gameState = ["", "", "", "", "", "", "", "", ""];
+            statusDisplay.innerHTML = `Vez do jogador: X`;
+            cells.forEach(cell => {
+                cell.innerHTML = "";
+                cell.classList.remove('x', 'o');
+            });
+        }
+
+        cells.forEach(cell => cell.addEventListener('click', handleCellClick));
+        restartBtn.addEventListener('click', handleRestartGame);
+    </script>
+</body>
+</html>

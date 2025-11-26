@@ -141,6 +141,53 @@ section.requisitos .tag-risk { background: var(--color-danger); }
 section.requisitos a { color: var(--color-primary-alt); text-decoration: none; }
 section.requisitos a:hover { text-decoration: underline; }
 
+/* ================= Animations ================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideUp {
+  0% { opacity:0; transform: translateY(40px); }
+  60% { opacity:1; }
+  100% { transform: translateY(0); }
+}
+@keyframes pulseGlow {
+  0%,100% { box-shadow: 0 0 0 0 rgba(96,165,250,0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(96,165,250,0); }
+}
+@keyframes typewriter {
+  from { width:0; }
+  to { width:100%; }
+}
+@keyframes caretBlink {
+  0%,80% { opacity:1; }
+  81%,100% { opacity:0; }
+}
+
+section.requisitos .anim-fade { animation: fadeIn .7s ease-out both; }
+section.requisitos .anim-slide-up { animation: slideUp .9s cubic-bezier(.23,.82,.43,1) both; }
+section.requisitos .anim-pulse { animation: pulseGlow 2.8s ease-in-out infinite; }
+section.requisitos .anim-type { 
+  overflow:hidden; white-space:nowrap; border-right:2px solid var(--color-primary-alt);
+  animation: typewriter 2.8s steps(40,end) .3s 1 normal both, caretBlink .9s steps(1,end) infinite;
+}
+section.requisitos ul.stagger li { opacity:0; animation: fadeIn .6s ease-out forwards; }
+section.requisitos ul.stagger li:nth-child(1){ animation-delay:.15s; }
+section.requisitos ul.stagger li:nth-child(2){ animation-delay:.30s; }
+section.requisitos ul.stagger li:nth-child(3){ animation-delay:.45s; }
+section.requisitos ul.stagger li:nth-child(4){ animation-delay:.60s; }
+section.requisitos ul.stagger li:nth-child(5){ animation-delay:.75s; }
+section.requisitos ul.stagger li:nth-child(6){ animation-delay:.90s; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  section.requisitos .anim-fade,
+  section.requisitos .anim-slide-up,
+  section.requisitos .anim-pulse,
+  section.requisitos .anim-type,
+  section.requisitos ul.stagger li { animation:none; opacity:1; }
+}
+
 /* Print adjustments */
 @media print {
   section.requisitos { background: #ffffff; color: #000; }
