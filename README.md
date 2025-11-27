@@ -268,7 +268,7 @@ Copiar código
 
 ---
 
-# 📇 Modelo CRC
+# 📇 Modelo CRC (Class–Responsibility–Collaborator)
 
 ### **Classe: Jogo**
 
