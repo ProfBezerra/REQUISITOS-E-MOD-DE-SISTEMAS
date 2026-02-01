@@ -11,7 +11,6 @@ footer: 'Engenharia de Requisitos • Jogo da Velha'
 
 ---
 
-
 # 🧭 Objetivo da Atividade
 
 * Mostrar que iniciar pela codificação sem requisitos gera suposições, retrabalho e risco de rejeição.
@@ -223,8 +222,8 @@ Então o sistema exibe "Empate".
 
 ```mermaid
 graph TD
-A[Game] --> B[Board]
-A --> C[Player]
+A[Jogo] --> B[Tabuleiro]
+A --> C[Jogador]
 A --> D[AI]
 B --> A
 C --> A
