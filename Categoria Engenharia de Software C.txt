@@ -1,0 +1,162 @@
+// Categoria: Engenharia de Software Completo - Pressman Cap. 1
+$CATEGORY: Eng_Software_20_Questoes
+
+// 1. Definição de Software
+::Q01::O software é composto por três elementos fundamentais. Quais são? {
+    =Instruções (programas), estruturas de dados e informação descritiva (documentação).
+    ~Código-fonte, hardware e manuais impressos.
+    ~Algoritmos, compiladores e sistemas operacionais.
+    ~Interface gráfica, banco de dados e conexão de rede.
+}
+
+// 2. Desgaste vs Deterioração
+::Q02::Por que dizemos que o software não se desgasta, mas deteriora? {
+    =Porque modificações sucessivas introduzem erros e aumentam a complexidade, elevando a taxa de defeitos.
+    ~Porque os bits perdem a validade com o passar dos anos e o uso contínuo.
+    ~Porque os servidores físicos acumulam poeira, afetando o desempenho do código.
+    ~Porque a linguagem de programação se torna obsoleta após 5 anos de uso.
+}
+
+// 3. Processo de Software - Definição
+::Q03::Sobre o processo de software, é correto afirmar que: {
+    =Não é uma prescrição rígida, mas uma abordagem adaptável selecionada pela equipe.
+    ~É um conjunto de regras matemáticas que garante a ausência total de erros.
+    ~Consiste em seguir estritamente o manual do fabricante do hardware.
+    ~É uma etapa que ocorre apenas após a entrega do código ao cliente.
+}
+
+// 4. Hierarquia do Processo: Atividade
+::Q04::No contexto do processo, o que define uma 'Atividade'? {
+    =Um esforço para atingir um objetivo amplo, independente do domínio ou tamanho do projeto.
+    ~Um conjunto de instruções de baixo nível que o computador executa.
+    ~Uma tarefa pequena e tangível como realizar um teste de unidade.
+    ~O ato de escrever documentação técnica para o usuário final.
+}
+
+// 5. Hierarquia do Processo: Ação
+::Q05::Uma 'Ação' de engenharia de software (ex: projeto de arquitetura) resulta em: {
+    =Um artefato de software fundamental, como um modelo arquitetural.
+    ~Apenas uma reunião de planejamento com os patrocinadores.
+    ~O fechamento do contrato financeiro do projeto.
+    ~Um manual de treinamento para os usuários.
+}
+
+// 6. Hierarquia do Processo: Tarefa
+::Q06::O que caracteriza uma 'Tarefa' no processo de software? {
+    =O foco em um objetivo pequeno, bem definido e que produz um resultado tangível.
+    ~Uma estratégia global de marketing para o produto.
+    ~A definição de metas de faturamento para o próximo ano.
+    ~O processo de recrutamento de novos desenvolvedores para a empresa.
+}
+
+// 7. Qualidade e Entrega
+::Q07::Qual é a intenção principal ao se aplicar um processo de software? {
+    =Entregar software dentro do prazo e com qualidade suficiente para satisfazer os envolvidos.
+    ~Garantir que o software nunca precise de manutenção após a entrega.
+    ~Reduzir o número de programadores necessários para o projeto.
+    ~Automatizar 100% da criação de código sem intervenção humana.
+}
+
+// 8. O Duplo Papel do Software
+::Q08::O software atua como 'produto' e como 'veículo'. Como veículo, ele: {
+    =Atua como base para o controle do computador, comunicação e controle de outros programas.
+    ~É vendido diretamente em lojas de aplicativos para o consumidor final.
+    ~Transforma dados financeiros para uso pessoal.
+    ~É utilizado para gerar realidade aumentada para entretenimento.
+}
+
+// 9. Lei das Consequências Não Intencionais
+::Q09::O texto cita a 'lei das consequências não intencionais'. Um exemplo disso é: {
+    =O software evoluir para mudar comportamentos sociais, como namoro e discursos políticos.
+    ~A falha deliberada de um hardware após o fim da garantia.
+    ~O aumento do preço dos computadores devido à falta de programadores.
+    ~A criação de vírus de computador por empresas de antivírus.
+}
+
+// 10. Software Legado - Definição
+::Q10::O que é comumente chamado de 'Software Legado'? {
+    =Sistemas desenvolvidos há décadas que continuam atendendo funções vitais de negócio.
+    ~Softwares que acabaram de ser lançados no mercado.
+    ~Programas que foram baixados ilegalmente da internet.
+    ~Sistemas operacionais exclusivos para dispositivos móveis novos.
+}
+
+// 11. Evolução do Legado
+::Q11::Por que sistemas legados precisam passar por reengenharia? {
+    =Para serem adaptados a novos ambientes, requisitos de negócio ou bancos de dados modernos.
+    ~Apenas para mudar a cor da interface gráfica para os usuários.
+    ~Para que os desenvolvedores ganhem mais horas extras de trabalho.
+    ~Porque o hardware onde eles rodam deixou de existir fisicamente no mundo.
+}
+
+// 12. Engenharia de Software - IEEE
+::Q12::Segundo a IEEE, a Engenharia de Software é a aplicação de uma abordagem: {
+    =Sistemática, disciplinada e quantificável.
+    ~Intuitiva, rápida e focada apenas no código.
+    ~Baseada em tentativa e erro para descoberta de requisitos.
+    ~Que prioriza a estética visual sobre a funcionalidade técnica.
+}
+
+// 13. Domínio: Software de Sistema
+::Q13::Compiladores, editores e drivers de rede são exemplos de qual categoria? {
+    =Software de sistema.
+    ~Software de inteligência artificial.
+    ~Software para linha de produtos.
+    ~Software embarcado.
+}
+
+// 14. Domínio: Software Embarcado
+::Q14::O software residente dentro de um forno micro-ondas ou no sistema de freios de um carro é: {
+    =Software embarcado.
+    ~Software de engenharia.
+    ~Aplicações Web.
+    ~Software legado.
+}
+
+// 15. Domínio: Software Científico
+::Q15::Programas para análise genética, vulcanologia e meteorologia pertencem ao domínio: {
+    =Software de engenharia e científico.
+    ~Software de sistema.
+    ~Aplicações mobile.
+    ~Software de inteligência artificial.
+}
+
+// 16. Domínio: Inteligência Artificial
+::Q16::A categoria de software que usa heurísticas para reconhecimento de voz e aprendizado de máquina é: {
+    =Software de inteligência artificial.
+    ~Software de aplicação.
+    ~Software para linha de produtos.
+    ~Software de sistema.
+}
+
+// 17. Natureza da Manutenção
+::Q17::Diferente do hardware, por que não existem 'peças de reposição' no software? {
+    =Porque cada defeito indica um erro no projeto ou processo, não uma falha física de componente.
+    ~Porque o software é gratuito e não gera lucro para fabricantes de peças.
+    ~Porque o software é feito de átomos que não se quebram.
+    ~Porque os manuais de software impedem a troca de funções.
+}
+
+// 18. Importância do Projeto (Design)
+::Q18::Segundo o texto, por que 'Projetar' (design) se tornou uma atividade essencial? {
+    =Devido à crescente complexidade dos requisitos e dos ambientes computacionais distribuídos.
+    ~Para tornar o software mais bonito e ganhar prêmios de design.
+    ~Para que os gerentes tenham mais documentos para ler durante as reuniões.
+    ~Apenas para decidir qual linguagem de programação será usada.
+}
+
+// 19. Consequências da Falha
+::Q19::Se o software falhar em sistemas modernos de controle médico ou autônomo, as falhas podem ser: {
+    =Catastróficas e ameaçadoras à vida.
+    ~Apenas pequenos inconvenientes estéticos na tela.
+    ~Corrigidas automaticamente pelo hardware sem intervenção humana.
+    ~Inexistentes, pois o hardware assume o controle total.
+}
+
+// 20. Longevidade do Software
+::Q20::O que geralmente acontece quando o valor de uma aplicação específica aumenta? {
+    =Sua base de usuários e longevidade crescem, aumentando a demanda por adaptação.
+    ~O software é imediatamente substituído por uma versão mais simples.
+    ~O código-fonte é destruído para evitar cópias ilegais.
+    ~O software para de funcionar para forçar a compra de um novo.
+}
